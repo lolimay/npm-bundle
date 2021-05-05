@@ -28,4 +28,4 @@ Temporary Items
 .apdisk
 
 # Rocket.Chat Apps Deps
-deps.ts
+/deps.ts

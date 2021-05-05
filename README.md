@@ -8,63 +8,24 @@ First of all, install the dependencies by the comamnd:
 npm i # install dependencies
 ```
 
-Then, run the command to bundle npm dependencies:
+Then, Edit `.rcappsconfig` and replace username and password to your own ones and make sure your local Rocket.Chat instance is running.
+
+```
+// .rcappsconfig
+{
+    "url": "http://localhost:3000",
+    "username": "root", 👈 replace it to your own one!
+    "password": "root", 👈 replace it to your own one!
+...
+```
+
+Lastly, bundle the dependencies and deploy the app by the comamnd:
 
 ```bash
-npm start # bundle npm dependencies into deps.ts
-```
-
-You will notice that a new file called `deps.ts` was generated in the root folder.
-
-import it in your mainClass file and use it!
-
-```js
-...
-const { _ } = require('./deps.ts')
-...
-console.log(_.VERSION, _.toUpper('abcd'))
-...
-```
-
-Edit `.rcappsconfig` and replace username and password to your own, the run the command
-
-```bash
-rc-apps deploy
-```
-
-to check the result!
-
-## Add new dependencies
-
-NOTE: Currently, only utilities libs are supported, like Ramda, moment.js etc.
-
-1. First, install one of the dependencies you want with, here we use Ramda as an example:
-
-```
-npm i lodash
-```
-
-2. Then, re-export it in the `index.js` file so that we can bundle it into `deps.ts` later:
-
-```js
-// index.js
-export { default as _ } from 'lodash'
-```
-
-3. Lastly, import it in your source file by:
-
-```
-const { _ } = require('./deps');
-console.log(_.VERSION, _.range(1, 100));
-```
-
-4. Deploy the app to check whether it works:
-
-```
 npm start
 ```
 
-and you will see the following message in the terminal:
+Check the result! You will possibly see the following message in the terminal:
 
 ```
 I20210505-22:40:49.479(8)?
@@ -80,7 +41,6 @@ I20210505-22:40:52.950(8)?   85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96,
 I20210505-22:40:52.950(8)?   97, 98, 99
 I20210505-22:40:52.950(8)? ]
 ```
-
 
 ## Know Issues
 

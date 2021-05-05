@@ -1,0 +1,16 @@
+{
+    "id": "6fb694d5-9c4b-4fba-8f5a-9fd674de3752",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.19.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "a",
+        "homepage": "a",
+        "support": "a"
+    },
+    "name": "npm-bundle",
+    "nameSlug": "npm-bundle",
+    "classFile": "NpmBundleApp.ts",
+    "description": "a",
+    "implements": []
+}

@@ -41,30 +41,27 @@ NOTE: Currently, only utilities libs are supported, like Ramda, moment.js etc.
 1. First, install one of the dependencies you want with, here we use Ramda as an example:
 
 ```
-npm i ramdam
+npm i lodash
 ```
 
 2. Then, re-export it in the `index.js` file so that we can bundle it into `deps.ts` later:
 
 ```js
 // index.js
-export * as R from 'ramda'
+export { default as _ } from 'lodash'
 ```
 
-3. With the above statement added, run the command:
-
-```bash
-nmm start
-```
-
-to rebuild the `deps.ts` so that it can include Ramda
-
-4. Lastly, import it in your source file by:
+3. Lastly, import it in your source file by:
 
 ```
-const { R } = require('./deps')
-...
-console.log(R.map(R.identity, [1, 2, 3]))
+const { _ } = require('./deps');
+console.log(_.VERSION, _.range(1, 100));
+```
+
+4. Deploy the app to check whether it works:
+
+```
+npm start
 ```
 
 

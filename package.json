@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "npx rollup --config"
+        "start": "npx rollup --config && rc-apps deploy"
     },
     "devDependencies": {
         "@rocket.chat/apps-engine": "^1.19.0",

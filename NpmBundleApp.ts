@@ -9,8 +9,7 @@ export class NpmBundleApp extends App {
     constructor(info: IAppInfo, logger: ILogger, accessors: IAppAccessors) {
         super(info, logger, accessors);
 
-        const deps = require('./deps');
-        console.log(deps)
-        // console.log(R.map(R.identity, [1, 2, 3]));
+        const { _ } = require('./deps');
+        console.log(_.VERSION, _.range(1, 100));
     }
 }
